@@ -14,4 +14,7 @@ cmake --build .
 ```
 
 ## Test
+From the same directory you built in
+```
 ./car/test/test_car
+```
