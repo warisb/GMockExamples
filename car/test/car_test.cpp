@@ -21,12 +21,6 @@ protected:
 
 TEST_F(CarTestFixture, TestReversalLowersVolume)
 {
-    EXPECT_CALL(m_radioMock, volume(_)).WillOnce(Invoke([this](float vol)
-        {
-            m_cachedVolume = vol;
-        }
-    ));
-
+    EXPECT_CALL(m_radioMock, volume(10)).WillOnce(Return(10));
     m_testCar.reverse();
-    EXPECT_THAT(m_cachedVolume, Eq(10));
 }
